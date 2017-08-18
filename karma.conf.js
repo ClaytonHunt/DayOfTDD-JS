@@ -1,28 +1,42 @@
-module.exports = function(config) {
-  config.set({
-    files: [
-      {pattern: './src/*.spec.js', watched: false},
-      {pattern: './src/**/*.spec.js', watched: false}
-    ],
+var webpackConfig = require('./webpack.config');
 
-    preprocessors: {
-      // add webpack as preprocessor
-      './src/*.spec.js': ['webpack'],
-      './src/**/*.spec.js': ['webpack']
-    },
+module.exports = function (config) {
+    config.set({
+        basePath: '',
+        frameworks: ['jasmine'],
+        files: [{
+            pattern: './src/**/*.spec.js',
+            watched: true
+        }],
+        exclude: [],
+        preprocessors: {
+            "./src/**/*.spec.js": ["webpack"]
+        },
+        // webpack configuration
+        webpack: webpackConfig,
+        webpackMiddleware: {
+            stats: "errors-only"
+        },
+        reporters: ['progress'],
+        port: 9876,
+        colors: true,
+        logLevel: config.LOG_INFO,
+        autoWatch: true,
+        browsers: ['Nightmare'],
 
-    webpack: {
-      // karma watches the test entry points
-      // (you don't need to specify the entry option)
-      // webpack watches dependencies
+        plugins: [
+            'karma-nightmare'
+        ],
 
-      // webpack configuration
-    },
-
-    webpackMiddleware: {
-      // webpack-dev-middleware configuration
-      // i. e.
-      stats: 'errors-only'
-    }
-  });
+        // you can define custom flags
+        nightmareOptions: {
+            width: 800,
+            height: 600,
+            show: false
+        },
+        // Continuous Integration mode
+        // if true, Karma captures browsers, runs the tests and exits
+        singleRun: false,
+        concurrency: Infinity
+    });
 };
