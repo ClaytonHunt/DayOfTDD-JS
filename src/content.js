@@ -1,1 +1,1 @@
-export const message = "It works from content.js.";
+export const message = "";
