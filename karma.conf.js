@@ -25,7 +25,9 @@ module.exports = function (config) {
         browsers: ['Nightmare'],
 
         plugins: [
-            'karma-nightmare'
+            'karma-nightmare',
+            'karma-webpack',
+            'karma-jasmine'
         ],
 
         // you can define custom flags
