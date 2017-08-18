@@ -1,0 +1,33 @@
+{
+  "name": "dayoftdd-js",
+  "version": "0.0.0",
+  "description": "JavaScript starting point for Day of TDD",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClaytonHunt/DayOfTDD-JS.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ClaytonHunt/DayOfTDD-JS/issues"
+  },
+  "homepage": "https://github.com/ClaytonHunt/DayOfTDD-JS#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.5",
+    "karma-jasmine": "^1.1.0",
+    "karma-nightmare": "^0.4.10",
+    "karma-webpack": "^2.0.4",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
